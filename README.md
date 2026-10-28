@@ -28,3 +28,18 @@ This project includes an `.npmrc` compatibility setting for npm's peer-dependenc
 ### Concierge
 
 The concierge uses a deterministic rule-based model in `src/routes/api.chat.ts`. It does not call Lovable, OpenAI, Python, or any other AI service. Update the intent rules and grounded responses in that file when hotel information changes.
+
+### Deploy to Vercel
+
+Import the GitHub repository into Vercel. Vercel should use the existing `npm run build` script and automatically detect TanStack Start. The project is configured with the Vercel Nitro preset.
+
+Add these environment variables in Vercel Project Settings for Production, Preview, and Development:
+
+```text
+VITE_SUPABASE_URL
+VITE_SUPABASE_PUBLISHABLE_KEY
+SUPABASE_URL
+SUPABASE_PUBLISHABLE_KEY
+```
+
+The `VITE_` values are publishable and are required by the browser client. Do not add service-role keys or other secrets to `VITE_` variables.
