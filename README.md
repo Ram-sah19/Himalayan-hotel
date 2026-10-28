@@ -19,6 +19,12 @@ Prefer working locally? You need Node.js and npm — [install with nvm](https://
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+This project includes an `.npmrc` compatibility setting for npm's peer-dependency resolver. If npm has already cached a failed install, run `npm cache verify` once and then repeat `npm install`.
+
+### Concierge
+
+The concierge uses a deterministic rule-based model in `src/routes/api.chat.ts`. It does not call Lovable, OpenAI, Python, or any other AI service. Update the intent rules and grounded responses in that file when hotel information changes.

@@ -160,3 +160,23 @@
   scrollbar-width: thin;
   scrollbar-color: color-mix(in oklab, var(--color-primary) 30%, transparent) transparent;
 }
+
+@keyframes concierge-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(2deg);
+  }
+}
+
+@keyframes concierge-sparkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(18deg);
+  }
+}
